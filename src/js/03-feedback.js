@@ -48,6 +48,12 @@ function fillForm() {
     return;
   }
 
+  const keys = Object.keys(localStorageFormData);
+
+  for (const key of keys) {
+    feedbackFormEl.elements[key].value = localStorageFormData.key;
+  }
+
   emailAreaEl.value = JSON.parse(localStorage.getItem('feedback-form-state')).email;
   textAreaEl.value = JSON.parse(localStorage.getItem('feedback-form-state')).message;
 }
